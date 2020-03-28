@@ -44,8 +44,6 @@ module.exports = {
 
         const incident = await database('incidents').where('id', id).select('ong_id').first();
 
-        console.log(incident);
-
         if (!incident){
             return response.status(404).send({error: "Incident not found"});
         }
